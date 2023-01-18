@@ -28,6 +28,11 @@ body {
     background-color: #ddd;
     color: black;
   }
+
+  .current-link-active {
+    background-color: #ddd;
+    color: black;
+  }
   
   .active {
     background-color: #02a8a0;

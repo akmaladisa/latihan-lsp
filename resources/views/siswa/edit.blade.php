@@ -36,7 +36,7 @@
                     <td class="bar">
                         <select name="kelas_id">
                             @foreach ($kelas as $k)
-                                <option {{ $k->id == $siswa->kelas_id ? 'selected' : '' }} value="{{ $k->id }}">{{ $k->nama_kelas }} {{ $k->jurusan->nama_jurusan }}</option>
+                                <option {{ $k->id == $siswa->kelas_id ? 'selected' : '' }} value="{{ $k->id }}">{{ $k->nama_kelas }}</option>
                             @endforeach
                         </select>
                     </td>
