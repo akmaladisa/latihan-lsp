@@ -13,7 +13,7 @@ class Nilai extends Model
     protected $guarded = ['id'];
 
     public function mengajar(){
-        return $this->belongsto(Mengajar::class, 'guru_id', 'id');
+        return $this->belongsto(Mengajar::class, 'mengajar_id', 'id');
 }
 
     public function siswa(){

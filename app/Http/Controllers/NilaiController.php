@@ -48,8 +48,9 @@ class NilaiController extends Controller
             'uh' => 'required',
             'uts' => 'required',
             'uas' => 'required',
-            'na' => 'required'
         ]);
+
+        $data_nilai['na'] = round( ($request->uh + $request->uts + $request->uas) / 3);
 
         Nilai::create($data_nilai);
 
@@ -75,7 +76,7 @@ class NilaiController extends Controller
      */
     public function edit(Nilai $nilai)
     {
-        return view('nilai.create', [
+        return view('nilai.edit', [
             'mengajar' => Mengajar::all(),
             'siswa' => Siswa::all(),
             'nilai' => $nilai
@@ -97,8 +98,9 @@ class NilaiController extends Controller
             'uh' => 'required',
             'uts' => 'required',
             'uas' => 'required',
-            'na' => 'required'
         ]);
+
+        $data_nilai['na'] = round( ($request->uh + $request->uts + $request->uas) / 3);
 
         $nilai->update($data_nilai);
 
