@@ -2,10 +2,10 @@ import { Inertia } from "@inertiajs/inertia";
 import { Head } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import { usePage } from "@inertiajs/inertia-react";
-import "../../../css/style.css";
+import "../../../resources/css/style.css";
 
 export default function Login() {
-    const { error } = usePage.props.errors;
+    const { error } = usePage().props.errors;
     const [idAdmin, setIdAdmin] = useState();
     const [nis, setNis] = useState();
     const [nip, setNip] = useState();
@@ -46,12 +46,12 @@ export default function Login() {
             <div className="menu">
                 <b><a href="#" className="active">Home</a></b>
             </div>
-            <div className="kiri">
+            <div className="kiri-atas">
                 <fieldset>
                     <legend></legend>
                     <center>
                         <button
-                            className="button"
+                            className="button-primary"
                             onClick={() => {
                                 setFormAdminVisible(!formAdminVisible);
                                 setFormSiswaVisible(false);
@@ -61,9 +61,9 @@ export default function Login() {
                             Admin
                         </button>
                         <button
-                            className="button"
+                            className="button-primary"
                             onClick={() => {
-                                setFormSiswaVisible(!setFormSiswaVisible);
+                                setFormSiswaVisible(!formSiswaVisible);
                                 setFormAdminVisible(false);
                                 setFormGuruVisible(false);
                             }}
@@ -71,9 +71,9 @@ export default function Login() {
                             Siswa
                         </button>
                         <button
-                            className="button"
+                            className="button-primary"
                             onClick={() => {
-                                setFormGuruVisible(!setFormGuruVisible);
+                                setFormGuruVisible(!formGuruVisible);
                                 setFormAdminVisible(false);
                                 setFormSiswaVisible(false);
                             }}
@@ -110,9 +110,9 @@ export default function Login() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td colSpan="2">
                                     <center>
-                                        <button className="button" type="button" onClick={() => handleLoginAdmin()}>
+                                        <button className="button-login" type="button" onClick={() => handleLoginAdmin()}>
                                             Login
                                         </button>
                                     </center>
@@ -145,9 +145,9 @@ export default function Login() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td colSpan="2">
                                     <center>
-                                        <button className="button" type="button" onClick={() => handleLoginSiswa()}>
+                                        <button className="button-login" type="button" onClick={() => handleLoginSiswa()}>
                                             Login
                                         </button>
                                     </center>
@@ -164,7 +164,7 @@ export default function Login() {
                         </center>
                         <table>
                             <tr>
-                                <td className="bar">NIS</td>
+                                <td className="bar">NIP</td>
                                 <td className="bar">
                                     <input type="text" onChange={(e) => {
                                         setNip(e.target.value)
@@ -180,9 +180,9 @@ export default function Login() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td colSpan="2">
                                     <center>
-                                        <button className="button" type="button" onClick={() => handleLoginGuru()}>
+                                        <button className="button-login" type="button" onClick={() => handleLoginGuru()}>
                                             Login
                                         </button>
                                     </center>
